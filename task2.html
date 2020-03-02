@@ -9,24 +9,25 @@
 
 <body>
 
-    <form method="post" onsubmit="return validation(this);">
-
-        
+    <form method="post" onsubmit="return validation();">
 
         <label for="userNameLabel"> User Name </label><br>
-        <input type="text" name="userName" id="userName"><br>
+        <input type="text" name="userName" id="userName" value="username"><br>
 
         <label for="firstNameLabel"> First Name </label><br>
-        <input type="text" name="firstName" id="firstName"><br>
+        <input type="text" name="firstName" id="firstName" value="first name"><br>
 
         <label for="lastNameLabel"> Last Name </label><br>
-        <input type="text" name="lastName" id="lastName"><br>
+        <input type="text" name="lastName" id="lastName"  value="last name"><br>
+        <label for="checkBoxNameLabel"> Paste First Name and Last Name into Card Details Field</label> 
+        <input type="checkbox" name="checkBoxName" onclick="FillName(this.form)">     
+        <br>
 
         <label for="emailLabel"> Email </label><br>
-        <input type="email" name="email" id="email"><br>
+        <input type="email" name="email" id="email" value="yourname@gmail.com"><br>
 
         <label for="twitterNameLabel"> Twitter </label><br>
-        <input type="text" name="twitter" id="twitter"><br>
+        <input type="text" name="twitter" id="twitter" value="@yourTwitterUserName"><br>
 
         <!-- Gender Input -->
         <label for="gender"> Gender: </label>
@@ -333,11 +334,29 @@
 
         <br>
 
+        <label for="card"> <b> Card Details: </b></label><br>
+
+        <br>
+
+        <!-- FirstName Input For Card -->
+        <label for="firstNameCardLabel"> First Name: </label><br>
+        <input type="text" id="firstNameCard" name="firstNameCard">
+
+        <br>
+
+        <!-- lastName Input For Card -->
+        <label for="lastNameCardLabel"> Last Name: </label><br>
+        <input type="text" id="lastNameCard" name="lastNameCard">
+
+        <br>
+
         <!-- Card Number Input -->
         <label for="cardNumLabel"> Card Number (In the following format: 9999-9999-9999-9999): </label><br>
         <input type="text" id="cardNum" name="cardNum"><br>
 
-        <br>
+        <!-- CVC Input -->
+        <label for="cvcLabel"> CVC: </label><br>
+        <input type="text" id="cvc" name="cvc"><br>
 
         <!-- Expiration Date Input -->
 
@@ -383,6 +402,10 @@
         <!-- PostCode Address Input -->
         <label for="postCodeLabel"> PostCode: </label><br>
         <input type="text" id="postCodePostal" name="postCodePostal"><br>
+        <label for="checkBoxAddress"> Paste Postal Address to Delivery Address </label><br>
+        <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+
+        <br>
 
         <!-- Country Address Input -->
         <label for="countryAddressPostalLabel"> Country: </label>
@@ -911,11 +934,11 @@
         </select><br>
 
         <br>
-
+        <script src="myscript.js"></script>
         <input type="submit" name="submit" value="Submit">
     </form>
     <div id="eResult" style="color: red;"></div>
-    <script src="myscript.js"></script>
+
 </body>
 
 </html>
